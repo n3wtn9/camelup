@@ -16,7 +16,7 @@ public class App {
         context.addRoutes(new RouteBuilder() {
             @Override
             public void configure() throws Exception {
-                from("file:/Users/newton/D6/code/camelup/testdir?noop=true").to("file:/Users/newton/D6/code/camelup/testdir2");
+                from("file:testdir?noop=true").to("file:testdir2");
             }
         });
         context.start();
