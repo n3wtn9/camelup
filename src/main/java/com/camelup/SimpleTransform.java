@@ -14,8 +14,12 @@ public class SimpleTransform {
         context.addRoutes(new RouteBuilder() {
             @Override
             public void configure() throws Exception {
-                from("file:textdir")
+                from("file:textdir/newton").process(new SimpleProcessor())
+                .to("file:textdir2");
             }
         });
+        context.start();
+        Thread.sleep(10000);
+        context.stop();
     }
 }
